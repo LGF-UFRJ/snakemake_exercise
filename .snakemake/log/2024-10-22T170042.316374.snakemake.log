@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionException in rule STAR in file /home5/attilio/Tarcisio/exercise_snakemake/Snakefile, line 38:
+Error:
+  TypeError: <lambda>() takes 0 positional arguments but 1 was given
+Wildcards:
+  sample=bach
+Traceback:
+

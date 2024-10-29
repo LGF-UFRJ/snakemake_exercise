@@ -1,0 +1,78 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+trim_pair        4
+total            5
+
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver in time (10s). Falling back to greedy solver.
+
+[Tue Oct 22 16:50:42 2024]
+rule trim_pair:
+    input: links/bach_R1.fq, links/bach_R2.fq
+    output: trim/bach_R1_val_1.fq
+    jobid: 5
+    reason: Missing output files: trim/bach_R1_val_1.fq
+    wildcards: sample=bach, repnum=1
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:50:42 2024]
+rule trim_pair:
+    input: links/bach_R1.fq, links/bach_R2.fq
+    output: trim/bach_R2_val_2.fq
+    jobid: 6
+    reason: Missing output files: trim/bach_R2_val_2.fq
+    wildcards: sample=bach, repnum=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:50:42 2024]
+rule trim_pair:
+    input: links/ctrl_R1.fq, links/ctrl_R2.fq
+    output: trim/ctrl_R1_val_1.fq
+    jobid: 7
+    reason: Missing output files: trim/ctrl_R1_val_1.fq
+    wildcards: sample=ctrl, repnum=1
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:50:42 2024]
+rule trim_pair:
+    input: links/ctrl_R1.fq, links/ctrl_R2.fq
+    output: trim/ctrl_R2_val_2.fq
+    jobid: 8
+    reason: Missing output files: trim/ctrl_R2_val_2.fq
+    wildcards: sample=ctrl, repnum=2
+    resources: tmpdir=/tmp
+
+[Tue Oct 22 16:50:45 2024]
+Finished job 8.
+1 of 5 steps (20%) done
+[Tue Oct 22 16:50:46 2024]
+Finished job 6.
+2 of 5 steps (40%) done
+[Tue Oct 22 16:50:46 2024]
+Finished job 7.
+3 of 5 steps (60%) done
+[Tue Oct 22 16:50:46 2024]
+Finished job 5.
+4 of 5 steps (80%) done
+Select jobs to execute...
+
+[Tue Oct 22 16:50:46 2024]
+localrule all:
+    input: links/bach_R1.fq, links/bach_R2.fq, links/ctrl_R1.fq, links/ctrl_R2.fq, trim/bach_R1_val_1.fq, trim/bach_R2_val_2.fq, trim/ctrl_R1_val_1.fq, trim/ctrl_R2_val_2.fq
+    jobid: 0
+    reason: Input files updated by another job: trim/bach_R1_val_1.fq, trim/ctrl_R1_val_1.fq, trim/bach_R2_val_2.fq, trim/ctrl_R2_val_2.fq
+    resources: tmpdir=/tmp
+
+[Tue Oct 22 16:50:46 2024]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: .snakemake/log/2024-10-22T165014.151626.snakemake.log

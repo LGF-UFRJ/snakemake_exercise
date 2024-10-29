@@ -1,0 +1,8 @@
+FileNotFoundError in file /home5/attilio/Tarcisio/exercise_snakemake/Snakefile, line 5:
+[Errno 2] No such file or directory: 'fastqs/samplesheet.tsv'
+  File "/home5/attilio/Tarcisio/exercise_snakemake/Snakefile", line 5, in <module>
+  File "/home5/attilio/.local/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+  File "/home5/attilio/.local/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+  File "/home5/attilio/.local/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+  File "/home5/attilio/.local/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+  File "/home5/attilio/.local/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle

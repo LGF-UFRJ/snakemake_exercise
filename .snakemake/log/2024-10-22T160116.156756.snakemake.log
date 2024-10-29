@@ -1,0 +1,3 @@
+NameError in file /home5/attilio/Tarcisio/exercise_snakemake/Snakefile, line 9:
+name 'samplsheet' is not defined
+  File "/home5/attilio/Tarcisio/exercise_snakemake/Snakefile", line 9, in <module>

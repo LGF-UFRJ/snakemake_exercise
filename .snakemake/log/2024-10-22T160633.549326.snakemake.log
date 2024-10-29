@@ -1,0 +1,74 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 5
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all                 1
+create_links        4
+total               5
+
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver in time (10s). Falling back to greedy solver.
+
+[Tue Oct 22 16:06:55 2024]
+rule create_links:
+    input: /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+    output: links/ctrl_R2.fq
+    jobid: 4
+    reason: Missing output files: links/ctrl_R2.fq
+    wildcards: sample=ctrl_R2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:06:55 2024]
+rule create_links:
+    input: /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+    output: links/bach_R2.fq
+    jobid: 2
+    reason: Missing output files: links/bach_R2.fq
+    wildcards: sample=bach_R2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:06:55 2024]
+rule create_links:
+    input: /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+    output: links/bach_R1.fq
+    jobid: 1
+    reason: Missing output files: links/bach_R1.fq
+    wildcards: sample=bach_R1
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:06:55 2024]
+rule create_links:
+    input: /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+    output: links/ctrl_R1.fq
+    jobid: 3
+    reason: Missing output files: links/ctrl_R1.fq
+    wildcards: sample=ctrl_R1
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files.
+Terminating processes on user request, this might take some time.
+[Tue Oct 22 16:06:55 2024]
+Error in rule create_links:
+    jobid: 4
+    input: /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+    output: links/ctrl_R2.fq
+    shell:
+        python3 scripts/get_links.py /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Tue Oct 22 16:06:55 2024]
+Error in rule create_links:
+    jobid: 3
+    input: /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+    output: links/ctrl_R1.fq
+    shell:
+        python3 scripts/get_links.py /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2024-10-22T160633.549326.snakemake.log

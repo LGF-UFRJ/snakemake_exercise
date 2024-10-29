@@ -1,0 +1,60 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 5
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+trim_pair        4
+total            5
+
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver in time (10s). Falling back to greedy solver.
+
+[Tue Oct 22 16:49:21 2024]
+rule trim_pair:
+    input: links/bach_R1.fq, links/bach_R2.fq
+    output: trim/bach_R1_val_1.fq
+    jobid: 5
+    reason: Missing output files: trim/bach_R1_val_1.fq
+    wildcards: sample=bach, repnum=1
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:49:21 2024]
+rule trim_pair:
+    input: links/bach_R1.fq, links/bach_R2.fq
+    output: trim/bach_R2_val_2.fq
+    jobid: 6
+    reason: Missing output files: trim/bach_R2_val_2.fq
+    wildcards: sample=bach, repnum=2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:49:21 2024]
+rule trim_pair:
+    input: links/ctrl_R1.fq, links/ctrl_R2.fq
+    output: trim/ctrl_R1_val_1.fq
+    jobid: 7
+    reason: Missing output files: trim/ctrl_R1_val_1.fq
+    wildcards: sample=ctrl, repnum=1
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:49:21 2024]
+rule trim_pair:
+    input: links/ctrl_R1.fq, links/ctrl_R2.fq
+    output: trim/ctrl_R2_val_2.fq
+    jobid: 8
+    reason: Missing output files: trim/ctrl_R2_val_2.fq
+    wildcards: sample=ctrl, repnum=2
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule trim_pair in file /home5/attilio/Tarcisio/exercise_snakemake/Snakefile, line 28:
+Job 5  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+trim/bach_R1_val_1.fq
+Waiting at most 5 seconds for missing files.
+Terminating processes on user request, this might take some time.
+Complete log: .snakemake/log/2024-10-22T164852.482070.snakemake.log

@@ -1,0 +1,54 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+STAR         2
+all          1
+total        3
+
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver in time (10s). Falling back to greedy solver.
+
+[Tue Oct 22 17:02:43 2024]
+rule STAR:
+    input: trim/bach_R1_val_1.fq, trim/bach_R2_val_2.fq
+    output: map/bach_Aligned.out.bam
+    jobid: 9
+    reason: Missing output files: map/bach_Aligned.out.bam
+    wildcards: sample=bach
+    threads: 4
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 17:02:43 2024]
+rule STAR:
+    input: trim/ctrl_R1_val_1.fq, trim/ctrl_R2_val_2.fq
+    output: map/ctrl_Aligned.out.bam
+    jobid: 10
+    reason: Missing output files: map/ctrl_Aligned.out.bam
+    wildcards: sample=ctrl
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Oct 22 17:03:10 2024]
+Finished job 10.
+1 of 3 steps (33%) done
+[Tue Oct 22 17:03:10 2024]
+Finished job 9.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Tue Oct 22 17:03:10 2024]
+localrule all:
+    input: links/bach_R1.fq, links/bach_R2.fq, links/ctrl_R1.fq, links/ctrl_R2.fq, trim/bach_R1_val_1.fq, trim/bach_R2_val_2.fq, trim/ctrl_R1_val_1.fq, trim/ctrl_R2_val_2.fq, map/bach_Aligned.out.bam, map/ctrl_Aligned.out.bam
+    jobid: 0
+    reason: Input files updated by another job: map/ctrl_Aligned.out.bam, map/bach_Aligned.out.bam
+    resources: tmpdir=/tmp
+
+[Tue Oct 22 17:03:10 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2024-10-22T170215.514482.snakemake.log

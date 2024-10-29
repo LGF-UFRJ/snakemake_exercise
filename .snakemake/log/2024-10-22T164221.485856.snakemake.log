@@ -1,0 +1,3 @@
+WildcardError in file /home5/attilio/Tarcisio/exercise_snakemake/Snakefile, line 18:
+No values given for wildcard 'sample'.
+  File "/home5/attilio/Tarcisio/exercise_snakemake/Snakefile", line 18, in <module>

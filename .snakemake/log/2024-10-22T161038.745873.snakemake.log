@@ -1,0 +1,55 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 5
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all                 1
+create_links        4
+total               5
+
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Tue Oct 22 16:10:39 2024]
+rule create_links:
+    input: /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+    output: links/ctrl_R2.fq
+    jobid: 4
+    reason: Missing output files: links/ctrl_R2.fq
+    wildcards: sample=ctrl_R2
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:10:39 2024]
+rule create_links:
+    input: /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+    output: links/bach_R1.fq
+    jobid: 1
+    reason: Missing output files: links/bach_R1.fq
+    wildcards: sample=bach_R1
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:10:39 2024]
+rule create_links:
+    input: /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+    output: links/ctrl_R1.fq
+    jobid: 3
+    reason: Missing output files: links/ctrl_R1.fq
+    wildcards: sample=ctrl_R1
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 22 16:10:39 2024]
+rule create_links:
+    input: /home5/attilio/Tarcisio/exercise_snakemake/config/samplesheet.tsv
+    output: links/bach_R2.fq
+    jobid: 2
+    reason: Missing output files: links/bach_R2.fq
+    wildcards: sample=bach_R2
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.
